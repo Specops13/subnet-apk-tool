@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Input card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/surface_dark"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="8dp"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="IP / CIDR"
+                    android:textColor="@color/accent_green"
+                    android:textSize="11sp"
+                    android:textAllCaps="true"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="4dp"/>
+
+                <EditText
+                    android:id="@+id/etCidr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="e.g. 192.168.1.0/24"
+                    android:textColor="@color/text_primary"
+                    android:textSize="20sp"
+                    android:fontFamily="monospace"
+                    android:inputType="text"
+                    android:background="@color/input_bg"
+                    android:padding="10dp"
+                    android:singleLine="true"/>
+
+                <!-- Prefix slider -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp">
+
+                    <SeekBar
+                        android:id="@+id/seekPrefix"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:max="32"
+                        android:progress="24"
+                        android:progressTint="@color/accent_green"
+                        android:thumbTint="@color/accent_green"/>
+
+                    <TextView
+                        android:id="@+id/tvPrefixLabel"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:text="/24"
+                        android:textColor="@color/accent_green"
+                        android:textSize="14sp"
+                        android:fontFamily="monospace"
+                        android:gravity="end"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <!-- Quick examples -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <Button
+                        android:id="@+id/btnExample192"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="1"
+                        android:text="192.168/24"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="10sp"
+                        android:layout_marginEnd="4dp"/>
+
+                    <Button
+                        android:id="@+id/btnExample10"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="1"
+                        android:text="10.0.0.0/8"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="10sp"
+                        android:layout_marginEnd="4dp"/>
+
+                    <Button
+                        android:id="@+id/btnExample172"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="1"
+                        android:text="172.16/12"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="10sp"
+                        android:layout_marginEnd="4dp"/>
+
+                    <Button
+                        android:id="@+id/btnClear"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="1"
+                        android:text="Clear"
+                        android:textColor="@color/text_hint"
+                        android:textSize="10sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Subnet bits bar -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/surface_dark"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="8dp"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <ProgressBar
+                    android:id="@+id/subnetBar"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="12dp"
+                    android:progress="75"
+                    android:progressTint="@color/accent_blue"
+                    android:secondaryProgressTint="@color/accent_green"
+                    android:progressBackgroundTint="@color/input_bg"/>
+
+                <TextView
+                    android:id="@+id/tvBarLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Network bits: 24  Host bits: 8"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="11sp"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Error -->
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:textColor="@color/accent_red"
+            android:textSize="14sp"
+            android:padding="8dp"
+            android:background="@color/surface_dark"/>
+
+        <!-- Results card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/resultsCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/surface_dark"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="8dp"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Results  (long-press to copy)"
+                    android:textColor="@color/accent_green"
+                    android:textSize="11sp"
+                    android:textAllCaps="true"
+                    android:letterSpacing="0.08"
+                    android:padding="4dp"/>
+
+                <include android:id="@+id/rowNetwork" layout="@layout/item_result_row"/>
+                <include android:id="@+id/rowBroadcast" layout="@layout/item_result_row"/>
+                <include android:id="@+id/rowMask" layout="@layout/item_result_row"/>
+                <include android:id="@+id/rowWildcard" layout="@layout/item_result_row"/>
+                <include android:id="@+id/rowFirst" layout="@layout/item_result_row"/>
+                <include android:id="@+id/rowLast" layout="@layout/item_result_row"/>
+                <include android:id="@+id/rowHosts" layout="@layout/item_result_row"/>
+                <include android:id="@+id/rowNetBin" layout="@layout/item_result_row"/>
+                <include android:id="@+id/rowMaskBin" layout="@layout/item_result_row"/>
+                <include android:id="@+id/rowClass" layout="@layout/item_result_row"/>
+                <include android:id="@+id/rowType" layout="@layout/item_result_row"/>
+                <include android:id="@+id/rowReverse" layout="@layout/item_result_row"/>
+                <include android:id="@+id/rowSupernet" layout="@layout/item_result_row"/>
+                <include android:id="@+id/rowIpv6" layout="@layout/item_result_row"/>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>
