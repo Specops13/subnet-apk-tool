@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_calculator"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="@string/nav_calculator"
+        android:checked="true"/>
+    <item
+        android:id="@+id/nav_split"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="@string/nav_split"/>
+    <item
+        android:id="@+id/nav_lookup"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="@string/nav_lookup"/>
+    <item
+        android:id="@+id/nav_cheatsheet"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="@string/nav_cheat"/>
+</menu>
