@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SubnetCalc</string>
+    <string name="nav_calculator">Calc</string>
+    <string name="nav_split">Split</string>
+    <string name="nav_lookup">Lookup</string>
+    <string name="nav_cheatsheet">Cheat</string>
+    <string name="nav_cheat">Cheat</string>
+</resources>
